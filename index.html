@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 Pro Platinum | Apple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+    
+        :root {
+            --platinum-primary: #E5E4E2;
+            --platinum-secondary: #C0C0C0;
+            --diamond-accent: #B9F2FF;
+            --navy-dark: #00072D;
+            --midnight-dark: #0A0A19;
+            --text-primary: #FFFFFF;
+            --text-secondary: #D1D5DB;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--navy-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        
+        /* Ultra-Exclusive Preloader */
+        .platinum-preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--navy-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+        
+        .diamond-loader {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            transform: rotate(45deg);
+            filter: drop-shadow(0 0 10px rgba(185, 242, 255, 0.7));
+        }
+        
+        .diamond-loader::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(233, 233, 233, 0.9), 
+                rgba(185, 242, 255, 0.8), 
+                rgba(233, 233, 233, 0.9));
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            animation: diamondPulse 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes diamondPulse {
+            0%, 100% { 
+                transform: scale(1) rotate(0deg);
+                opacity: 0.9;
+            }
+            50% { 
+                transform: scale(0.8) rotate(10deg);
+                opacity: 0.6;
+                box-shadow: 0 0 30px rgba(185, 242, 255, 0.5);
+            }
+        }
+        
+        .loader-text {
+            margin-top: 40px;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--platinum-primary);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in forwards 1s;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 0.8; }
+        }
+        
+        /* Elite Navigation Bar */
+        .elite-nav {
+            background: linear-gradient(to bottom, 
+                rgba(0, 7, 45, 0.98), 
+                rgba(0, 7, 45, 0.92));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(229, 228, 226, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .elite-nav.scrolled {
+            background: rgba(0, 2, 20, 0.98);
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(229, 228, 226, 0.15);
+        }
+        
+        .nav-divider {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--platinum-primary), transparent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover .nav-divider {
+            width: 80%;
+        }
+        
+        /* Couture Hero Section */
+        .couture-hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(ellipse at top, 
+                rgba(10, 10, 25, 0.8), 
+                transparent 80%),
+                linear-gradient(to bottom, var(--navy-dark), var(--midnight-dark));
+        }
+        
+        .platinum-shine {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, 
+                rgba(229, 228, 226, 0.15) 0%, 
+                transparent 60%), 
+                linear-gradient(135deg, 
+                    rgba(185, 242, 255, 0.12) 0%, 
+                    transparent 60%);
+            animation: shineDrift 20s linear infinite;
+        }
+        
+        @keyframes shineDrift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(5%, 3%) rotate(2deg); }
+            50% { transform: translate(-3%, 5%) rotate(-1deg); }
+            75% { transform: translate(3%, -2%) rotate(1deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+        
+        .couture-title {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .couture-title::after {
+            content: 'PRO';
+            position: absolute;
+            top: -15px;
+            right: -50px;
+            font-size: 0.6em;
+            background: linear-gradient(to right, var(--platinum-primary), var(--diamond-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 5px;
+        }
+        
+        .couture-subtitle {
+            position: relative;
+        }
+        
+        .couture-subtitle::before,
+        .couture-subtitle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--platinum-primary));
+        }
+        
+        .couture-subtitle::before {
+            left: -50px;
+        }
+        
+        .couture-subtitle::after {
+            right: -50px;
+            background: linear-gradient(90deg, var(--platinum-primary), transparent);
+        }
+        
+        /* Jewel 3D Product Animation */
+        .jewel-display {
+            transform-style: preserve-3d;
+            perspective: 1500px;
+            animation: jewelFloat 12s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px rgba(185, 242, 255, 0.15));
+        }
+        
+        @keyframes jewelFloat {
+            0%, 100% { 
+                transform: translateY(0) rotateY(0deg) rotateX(0deg) scale(1); 
+            }
+            25% { 
+                transform: translateY(-20px) rotateY(8deg) scale(1.02); 
+            }
+            50% { 
+                transform: translateY(-10px) rotateY(-5deg) rotateX(3deg) scale(1.01); 
+            }
+            75% { 
+                transform: translateY(-15px) rotateY(4deg) rotateX(-2deg) scale(1.015); 
+            }
+        }
+        
+        /* Haute Couture Feature Cards */
+        .haute-card {
+            background: linear-gradient(145deg, 
+                rgba(0, 7, 45, 0.7), 
+                rgba(0, 2, 20, 0.85));
+            border: 1px solid rgba(229, 228, 226, 0.1);
+            border-radius: 20px;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .haute-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle at center, 
+                rgba(185, 242, 255, 0.1) 0%, 
+                transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.8s ease;
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .haute-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            border-color: rgba(185, 242, 255, 0.3);
+            box-shadow: 0 40px 60px -10px rgba(185, 242, 255, 0.15);
+        }
+        
+        .haute-card:hover::before {
+            opacity: 1;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Platinum Section Dividers */
+        .platinum-divider {
+            width: 60%;
+            height: 1px;
+            margin: 100px auto;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(229, 228, 226, 0.3), 
+                rgba(185, 242, 255, 0.7), 
+                rgba(229, 228, 226, 0.3), 
+                transparent);
+            position: relative;
+        }
+        
+        .platinum-divider::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--diamond-accent);
+            box-shadow: 0 0 10px var(--diamond-accent), 
+                        0 0 20px var(--diamond-accent);
+            animation: sparkle 3s ease infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; box-shadow: 0 0 15px var(--diamond-accent), 0 0 30px var(--diamond-accent); }
+        }
+        
+        /* Bespoke Color Selector */
+        .bespoke-color {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+        
+        .bespoke-color::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            transition: all 0.4s ease;
+        }
+        
+        .bespoke-color::after {
+            content: '';
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            right: -7px;
+            bottom: -7px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, 
+                rgba(185, 242, 255, 0.4) 0%, 
+                transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .bespoke-color:hover {
+            transform: scale(1.1);
+        }
+        
+        .bespoke-color:hover::before {
+            border-color: var(--platinum-secondary);
+        }
+        
+        .bespoke-color.selected {
+            border-color: var(--diamond-accent);
+            box-shadow: 0 0 15px rgba(185, 242, 255, 0.5);
+        }
+        
+        .bespoke-color.selected::before {
+            border-color: var(--platinum-primary);
+        }
+        
+        .bespoke-color.selected::after {
+            opacity: 1;
+            animation: colorGlow 3s ease infinite;
+        }
+        
+        @keyframes colorGlow {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+        
+        /* Elite Marquee */
+        .elite-marquee {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to right, 
+                rgba(0, 2, 20, 0.5), 
+                rgba(0, 7, 45, 0.7), 
+                rgba(0, 2, 20, 0.5));
+        }
+        
+        .elite-marquee::before,
+        .elite-marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 1;
+            background: linear-gradient(to right, var(--navy-dark), transparent);
+        }
+        
+        .elite-marquee::before {
+            left: 0;
+        }
+        
+        .elite-marquee::after {
+            right: 0;
+            background: linear-gradient(to left, var(--navy-dark), transparent);
+        }
+        
+        /* Platinum Button Styles */
+        .btn-platinum {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, 
+                rgba(229, 228, 226, 0.9), 
+                rgba(185, 242, 255, 0.8));
+            color: var(--navy-dark);
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: none;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 10px 30px rgba(229, 228, 226, 0.2);
+        }
+        
+        .btn-platinum::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(transparent, 
+                rgba(255, 255, 255, 0.2), 
+                transparent);
+            transform: rotate(45deg);
+            transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .btn-platinum:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(185, 242, 255, 0.3);
+        }
+        
+        .btn-platinum:hover::before {
+            left: 100%;
+            top: 100%;
+        }
+        
+        .btn-platinum-outline {
+            background: transparent;
+            color: var(--platinum-primary);
+            border: 1px solid rgba(229, 228, 226, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .btn-platinum-outline::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 150%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(229, 228, 226, 0.1), 
+                transparent);
+            transform: skewX(-20deg);
+            transition: all 0.8s ease;
+        }
+        
+        .btn-platinum-outline:hover {
+            border-color: var(--diamond-accent);
+            box-shadow: 0 0 20px rgba(185, 242, 255, 0.2);
+        }
+        
+        .btn-platinum-outline:hover::after {
+            left: 120%;
+        }
+        
+        /* Fine Jewelry Hover Effects */
+        .jewel-hover {
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        .jewel-hover:hover {
+            transform: translateY(-5px) scale(1.03);
+            filter: drop-shadow(0 10px 20px rgba(185, 242, 255, 0.2));
+        }
+        
+        /* Diamond Point Indicators */
+        .diamond-point {
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .diamond-point::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5em;
+            width: 12px;
+            height: 12px;
+            transform: rotate(45deg);
+            background: linear-gradient(135deg, 
+                var(--platinum-primary), 
+                var(--diamond-accent));
+            box-shadow: 0 0 10px var(--diamond-accent);
+        }
+        
+        /* Exclusive Parallax Layers */
+        .parallax-layer {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Platinum Preloader -->
+    <div class="platinum-preloader" id="preloader">
+        <div class="diamond-loader"></div>
+        <div class="loader-text">Loading Platinum Experience</div>
+    </div>
+    
+    <!-- Elite Navigation -->
+    <nav class="elite-nav fixed w-full z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-8 py-5">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-medium tracking-wide text-platinum-100">
+                    <i class="fas fa-gem text-diamond-500 mr-2"></i>
+                    <span class="-ml-1">iPhone 15 <span class="font-light couture-title">Pro</span></span>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-12">
+                    <a href="#overview" class="nav-item text-gray-300 hover:text-platinum-100 transition duration-300 relative pb-2">
+                        Overview
+                        <div class="nav-divider"></div>
+                    </a>
+                    <a href="#design" class="nav-item text-gray-300 hover:text-platinum-100 transition duration-300 relative pb-2">
+                        Platinum Design
+                        <div class="nav-divider"></div>
+                    </a>
+                    <a href="#camera" class="nav-item text-gray-300 hover:text-platinum-100 transition duration-300 relative pb-2">
+                        Diamond Camera
+                        <div class="nav-divider"></div>
+                    </a>
+                    <a href="#technology" class="nav-item text-gray-300 hover:text-platinum-100 transition duration-300 relative pb-2">
+                        Elite Technology
+                        <div class="nav-divider"></div>
+                    </a>
+                    <a href="#colors" class="nav-item text-gray-300 hover:text-platinum-100 transition duration-300 relative pb-2">
+                        Bespoke Colors
+                        <div class="nav-divider"></div>
+                    </a>
+                </div>
+                
+                <button class="btn-platinum px-8 py-2.5 rounded-full text-sm hidden lg:block tracking-wide">
+                    Reserve Now
+                </button>
+                
+                <button class="lg:hidden text-gray-300 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Couture Hero Section -->
+    <section id="overview" class="couture-hero flex items-center justify-center relative overflow-hidden">
+        <div class="platinum-shine"></div>
+        
+        <!-- Background Video with Gradient Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full flex justify-center items-center pointer-events-none">
+            <div class="absolute w-full h-full bg-gradient-to-b from-navy-900 via-transparent to-navy-900 opacity-80"></div>
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                <source src="https://www.apple.com/105/media/us/iphone-15-pro/2023/8e2668a1-44a4-4d05-a5f6-bc236029f3e2/anim/hero/large.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="container mx-auto px-8 flex flex-col lg:flex-row items-center justify-between relative z-10 pt-20">
+            <div class="lg:w-1/2 text-center lg:text-left mb-20 lg:mb-0">
+                <span class="inline-block mb-6 md:mb-8 text-platinum-200 text-sm tracking-[0.3em] couture-subtitle">
+                    Limited Platinum Edition
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 leading-tight">
+                    <span class="text-platinum-100">iPhone 15</span> <span class="font-medium couture-title">Pro</span>
+                </h1>
+                <p class="text-xl text-gray-300 mb-8 uppercase tracking-widest font-light">The Ultimate Luxury Smartphone Experience</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                    <button class="btn-platinum px-12 py-3.5 rounded-full font-medium tracking-wider jewel-hover">
+                        Order Now — $1,299
+                    </button>
+                    <button class="btn-platinum-outline px-12 py-3.5 rounded-full font-medium tracking-wider jewel-hover">
+                        Explore Features <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </button>
+                </div>
+                
+                <div class="mt-16 flex justify-center lg:justify-start space-x-8">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">
+                            <i class="fas fa-gem text-diamond-500"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 tracking-widest">PLATINUM<br>EDITION</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">
+                            <i class="fas fa-certificate text-platinum-300"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 tracking-widest">LIFETIME<br>WARRANTY</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">
+                            <i class="fas fa-headset text-platinum-300"></i>
+                        </div>
+                        <p class="text-xs text-gray-400 tracking-widest">24/7 VIP<br>SUPPORT</p>
+                    </div>
+                </div>
+            </div>
+            
+          
+                         
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy-900 opacity-70"></div>
+                        <button class="btn-platinum px-6 py-2 rounded-full text-sm absolute bottom-20 left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+                            <i class="fas fa-expand"></i>
+                            <span>Explore in AR</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:block absolute -right-20 bottom-20 animate-[spin_20s_linear_infinite]">
+                    <div class="w-40 h-40 rounded-full border border-gray-700 flex items-center justify-center">
+                        <div class="w-36 h-36 rounded-full border border-gray-600 flex items-center justify-center">
+                            <div class="w-32 h-32 rounded-full border border-gray-500 flex items-center justify-center">
+                                <div class="w-6 h-6 rounded-full bg-gradient-to-br from-platinum-100 to-diamond-500 animate-pulse"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elite Marquee -->
+    <div class="elite-marquee bg-navy-800 py-5 overflow-hidden">
+        <div class="flex space-x-24 animate-marquee whitespace-nowrap">
+            <span class="text-gray-300 text-lg uppercase tracking-widest"><span class="text-platinum-100">A17 Pro</span> Chip — Most Powerful Ever</span>
+            <span class="text-gray-300 text-lg uppercase tracking-widest"><span class="text-platinum-100">Titanium</span> — Lightest & Strongest</span>
+            <span class="text-gray-300 text-lg uppercase tracking-widest"><span class="text-platinum-100">48MP Pro Camera</span> — Studio Quality</span>
+            <span class="text-gray-300 text-lg uppercase tracking-widest"><span class="text-platinum-100">USB 3</span> — 20x Faster Transfer</span>
+            <span class="text-gray-300 text-lg uppercase tracking-widest"><span class="text-platinum-100">Dynamic Island</span> — Interactive Notifications</span>
+            <span class="text-gray-300 text-lg uppercase tracking-widest"><span class="text-platinum-100">ProMotion</span> — 120Hz Display</span>
+        </div>
+    </div>
+
+    <!-- Platinum Design Section -->
+    <section id="design" class="py-32 bg-navy-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute inset-0 bg-[url('https://www.apple.com/v/iphone-15-pro/a/images/overview/design/titanium_texture__buv9x2mmo0ua_large.jpg')] bg-cover bg-center mix-blend-overlay"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-bold mb-6 text-platinum-100">Platinum Design</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto uppercase tracking-widest font-light">Artfully Crafted from Premium Materials</p>
+                <div class="platinum-divider"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-16 mb-32">
+                <div class="lg:w-1/2 parallax-container">
+                    <div class="parallax-layer rounded-[24px] overflow-hidden jewel-hover">
+                        <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/design/titanium__bs4a1n1x2omu_large.jpg" 
+                             alt="iPhone 15 Titanium Design" 
+                             class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 space-y-10">
+                    <div>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">Exclusive to Pro</span>
+                        <h3 class="text-4xl font-semibold text-platinum-100 mt-2 mb-4">Aerospace-Grade Titanium</h3>
+                        <p class="text-gray-400 leading-relaxed">For the first time, we've used the same titanium that protects the Mars rover for an iPhone. Our precision-machined frame provides unprecedented strength while reducing weight.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-weight-hanging text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">19g Lighter</h4>
+                            <p class="text-sm text-gray-400">Than previous stainless steel models</p>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-shield-alt text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Enhanced Durability</h4>
+                            <p class="text-sm text-gray-400">Stronger than any previous iPhone</p>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-brush text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Exclusive Finish</h4>
+                            <p class="text-sm text-gray-400">Textured matte glass back for perfect grip</p>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-certificate text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Personalized Engraving</h4>
+                            <p class="text-sm text-gray-400">Custom message with platinum lettering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platinum-divider"></div>
+            
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16 mt-32">
+                <div class="lg:w-1/2 relative h-[500px]">
+                    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-3xl jewel-hover">
+                        <source src="https://www.apple.com/105/media/us/iphone-15-pro/2023/8e2668a1-44a4-4d05-a5f6-bc236029f3e2/anim/action-button/large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 rounded-3xl pointer-events-none" style="background: linear-gradient(to top, rgba(0,7,45,0.7), transparent 60%);"></div>
+                </div>
+                
+                <div class="lg:w-1/2 space-y-10">
+                    <div>
+                        <span class="text-xs text-gray-500 uppercase tracking-widest">New Feature</span>
+                        <h3 class="text-4xl font-semibold text-platinum-100 mt-2 mb-4">Customizable Action Button</h3>
+                        <p class="text-gray-400 leading-relaxed">Replacing the traditional mute switch, the new Action button gives you instant access to frequently used features with a simple press. Program it to suit your unique workflow.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="haute-card p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-navy-800 border border-gray-700 flex items-center justify-center mr-4">
+                                    <i class="fas fa-camera text-diamond-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Quick Access</h4>
+                                    <p class="text-sm text-gray-400">Launch Camera instantly</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-navy-800 border border-gray-700 flex items-center justify-center mr-4">
+                                    <i class="fas fa-microphone text-diamond-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Voice Memo</h4>
+                                    <p class="text-sm text-gray-400">Start recording immediately</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-navy-800 border border-gray-700 flex items-center justify-center mr-4">
+                                    <i class="fas fa-bolt text-diamond-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Shortcuts</h4>
+                                    <p class="text-sm text-gray-400">Run complex automations</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 rounded-full bg-navy-800 border border-gray-700 flex items-center justify-center mr-4">
+                                    <i class="fas fa-accessibility text-diamond-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Accessibility</h4>
+                                    <p class="text-sm text-gray-400">Quick feature activation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diamond Camera Section -->
+    <section id="camera" class="py-32 bg-navy-950 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute inset-0 bg-[url('https://www.apple.com/v/iphone-15-pro/a/images/overview/camera/camera_startframe__fvf2u9hfx4a6_large.jpg')] bg-cover bg-center mix-blend-overlay"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-bold mb-6 text-platinum-100">Diamond Camera System</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto uppercase tracking-widest font-light">Professional Photography at Your Fingertips</p>
+                <div class="platinum-divider"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-16 mb-32">
+                <div class="lg:w-1/2 relative jewel-hover">
+                    <img src="https://www.apple.com/v/iphone-15-pro/a/images/overview/camera/pro-camera-system__b1l3x9nfp5fm_large.png" 
+                         alt="iPhone 15 Pro Camera System" 
+                         class="w-full object-contain">
+                </div>
+                
+                <div class="lg:w-1/2 space-y-10">
+                    <h3 class="text-4xl font-semibold text-platinum-100">48MP Main Camera</h3>
+                    <p class="text-gray-400 leading-relaxed">Our advanced quad-pixel sensor combines every four pixels into one large 2.44μm pixel for stunning low-light photos with unprecedented detail and clarity.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center mr-4 mt-1 bg-gradient-to-br from-navy-800 to-navy-900">
+                                <div class="w-3 h-3 rounded-full bg-gradient-to-br from-platinum-100 to-diamond-500"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-platinum-100">Next-level Portraits</h4>
+                                <p class="text-gray-400">Depth mapping for professional bokeh with studio-quality lighting effects</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center mr-4 mt-1 bg-gradient-to-br from-navy-800 to-navy-900">
+                                <div class="w-3 h-3 rounded-full bg-gradient-to-br from-platinum-100 to-diamond-500"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-platinum-100">4K Cinematic Mode</h4>
+                                <p class="text-gray-400">Shoot in 4K at 30 fps with professional depth-of-field control</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center mr-4 mt-1 bg-gradient-to-br from-navy-800 to-navy-900">
+                                <div class="w-3 h-3 rounded-full bg-gradient-to-br from-platinum-100 to-diamond-500"></div>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-lg text-platinum-100">ProRAW & ProRes</h4>
+                                <p class="text-gray-400">Industry-standard formats for ultimate creative control</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platinum-divider"></div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-16 mt-32">
+                <div class="lg:w-1/2 relative h-[500px] jewel-hover">
+                    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-3xl">
+                        <source src="https://www.apple.com/105/media/us/iphone-15-pro/2023/8e2668a1-44a4-4d05-a5f6-bc236029f3e2/anim/telephoto/large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 rounded-3xl pointer-events-none" style="box-shadow: inset 0 0 100px rgba(0,7,45,0.7);"></div>
+                </div>
+                
+                <div class="lg:w-1/2 space-y-10">
+                    <h3 class="text-4xl font-semibold text-platinum-100">5x Telephoto Zoom</h3>
+                    <p class="text-gray-400 leading-relaxed">The advanced tetraprism design delivers optical-quality zoom at 120mm equivalent, with stabilization comparable to a professional tripod.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-search-plus text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Optical Zoom Range</h4>
+                            <p class="text-sm text-gray-400">From 13mm to 120mm focal range</p>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-hand-holding text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Advanced Stabilization</h4>
+                            <p class="text-sm text-gray-400">Tripod-level stability even at full zoom</p>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-moon text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Night Mode</h4>
+                            <p class="text-sm text-gray-400">Stunning low-light performance</p>
+                        </div>
+                        <div class="haute-card p-6">
+                            <div class="text-4xl mb-4">
+                                <i class="fas fa-sliders-h text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                            </div>
+                            <h4 class="font-semibold text-lg mb-2">Custom Controls</h4>
+                            <p class="text-sm text-gray-400">Save preferred settings presets</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elite Technology Section -->
+    <section id="technology" class="py-32 bg-navy-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute inset-0 bg-[url('https://www.apple.com/v/iphone-15-pro/a/images/overview/chip/a17-pro-end-frame__f4x09twz062a_large.jpg')] bg-[position:45%_center] bg-cover mix-blend-overlay"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-bold mb-6 text-platinum-100">Elite Technology</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto uppercase tracking-widest font-light">Designed for the Future</p>
+                <div class="platinum-divider"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8 mb-32">
+                <div class="haute-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="text-5xl">
+                            <i class="fas fa-microchip text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-navy-800 rounded-full border border-gray-700">Exclusive</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-platinum-100">A17 Pro Chip</h3>
+                    <p class="text-gray-400 mb-6">The world's first 3nm chip with 19 billion transistors and industry-leading performance per watt.</p>
+                    <div class="flex items-center gap-3 text-diamond-500 group">
+                        <span class="text-sm tracking-wide group-hover:pr-1 transition-all">Explore Technology</span>
+                        <i class="fas fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="haute-card p-8">
+                    <div class="text-5xl mb-6">
+                        <i class="fas fa-bolt text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-platinum-100">USB-C with USB 3</h3>
+                    <p class="text-gray-400 mb-6">USB 3 speeds up to 10Gb/s enable pro workflows with 4K video output to external displays.</p>
+                    <div class="flex items-center gap-3 text-diamond-500 group">
+                        <span class="text-sm tracking-wide group-hover:pr-1 transition-all">Explore Connectivity</span>
+                        <i class="fas fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+                
+                <div class="haute-card p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="text-5xl">
+                            <i class="fas fa-gamepad text-gradient-to-r from-platinum-100 to-diamond-500"></i>
+                        </div>
+                        <span class="text-xs px-3 py-1 bg-navy-800 rounded-full border border-gray-700">New</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-3 text-platinum-100">Pro Gaming</h3>
+                    <p class="text-gray-400 mb-6">Hardware-accelerated ray tracing and new GPU architecture deliver console-quality gaming performance.</p>
+                    <div class="flex items-center gap-3 text-diamond-500 group">
+                        <span class="text-sm tracking-wide group-hover:pr-1 transition-all">Explore Gaming</span>
+                        <i class="fas fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="platinum-divider"></div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-16 mt-32">
+                <div class="lg:w-1/2 relative h-[500px] jewel-hover">
+                    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-3xl">
+                        <source src="https://www.apple.com/105/media/us/iphone-15-pro/2023/8e2668a1-44a4-4d05-a5f6-bc236029f3e2/anim/dynamic-island/large.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 rounded-3xl pointer-events-none" style="box-shadow: inset 0 0 80px rgba(0,7,45,0.6);"></div>
+                </div>
+                
+                <div class="lg:w-1/2 space-y-10">
+                    <h3 class="text-4xl font-semibold text-platinum-100">Dynamic Island</h3>
+                    <p class="text-gray-400 leading-relaxed">An interactive way to experience iPhone that keeps important alerts, notifications, and activities persistently in view while you're using other apps.</p>
+                    
+                    <ul class="space-y-6">
+                        <li class="diamond-point text-gray-300">Live sports scores and flight details at a glance</li>
+                        <li class="diamond-point text-gray-300">Music controls without switching apps</li>
+                        <li class="diamond-point text-gray-300">Real-time activity tracking for timers, directions, and more</li>
+                        <li class="diamond-point text-gray-300">Personalized notifications that adapt to how you use your phone</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bespoke Colors Section -->
+    <section id="colors" class="py-32 bg-navy-950 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('https://www.apple.com/v/iphone-15-pro/a/images/overview/design/color/titanium_colors__dyj762xbboie_large.jpg')] bg-cover bg-center mix-blend-overlay"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-bold mb-6 text-platinum-100">Bespoke Finishes</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto uppercase tracking-widest font-light">Handcrafted to Your Preferences</p>
+                <div class="platinum-divider"></div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-12 mb-24">
+                <div class="text-center group">
+                    <div class="bespoke-color bg-[#E4E7E2] mx-auto mb-4" id="natural-titanium"></div>
+                    <h3 class="text-lg font-medium mb-1 text-platinum-100">Natural Titanium</h3>
+                    <p class="text-sm text-gray-400 tracking-widest group-hover:text-diamond-400 transition">Most premium</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bespoke-color bg-[#535150] mx-auto mb-4" id="black-titanium"></div>
+                    <h3 class="text-lg font-medium mb-1 text-platinum-100">Black Titanium</h3>
+                    <p class="text-sm text-gray-400 tracking-widest group-hover:text-diamond-400 transition">Timeless elegance</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bespoke-color bg-[#3e5d6b] mx-auto mb-4" id="blue-titanium"></div>
+                    <h3 class="text-lg font-medium mb-1 text-platinum-100">Blue Titanium</h3>
+                    <p class="text-sm text-gray-400 tracking-widest group-hover:text-diamond-400 transition">Deep and refined</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bespoke-color bg-[#E0C8C3] mx-auto mb-4" id="white-titanium"></div>
+                    <h3 class="text-lg font-medium mb-1 text-platinum-100">White Titanium</h3>
+                    <p class="text-sm text-gray-400 tracking-widest group-hover:text-diamond-400 transition">Pure minimalism</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bespoke-color bg-gradient-to-br from-platinum-100 to-diamond-400 mx-auto mb-4" id="platinum-edition"></div>
+                    <h3 class="text-lg font-medium mb-1 text-platinum-100">Platinum Edition</h3>
+                    <p class="text-sm text-gray-400 tracking-widest group-hover:text-diamond-400 transition">Limited availability</p>
+                </div>
+            </div>
+            
+            <div class="relative h-[600px] rounded-[28px] overflow-hidden jewel-hover">
+                <div class="absolute inset-0 bg-[url('https://www.apple.com/v/iphone-15-pro/a/images/overview/design/color/titanium_light__d8zw1bj0k5qu_large.jpg')] bg-cover bg-center bg-[position:center_70%]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-navy-950"></div>
+                </div>
+                <div class="relative z-10 h-full flex flex-col justify-end p-16 text-center">
+                    <h3 class="text-3xl font-bold mb-4 text-platinum-100">Premium Materials</h3>
+                    <p class="text-xl text-gray-300 max-w-2xl mx-auto">Each iPhone 15 Pro is crafted from aerospace-grade titanium and features a textured matte glass back that exudes quality while providing the perfect grip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platinum Specification Section -->
+    <section id="specs" class="py-32 bg-navy-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity5">
+            <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl font-bold mb-6 text-platinum-100">Platinum Specifications</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto uppercase tracking-widest font-light">Engineered to Excel in Every Detail</p>
+                <div class="platinum-divider"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 mb-24">
+                <div class="haute-card p-10">
+                    <h3 class="text-3xl font-semibold mb-8 text-center text-platinum-100">iPhone 15 Pro</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Display</span>
+                            <span class="text-platinum-200">6.1" Super Retina XDR</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Chip</span>
+                            <span class="text-diamond-300">A17 Pro</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Cameras</span>
+                            <span class="text-platinum-200">48MP Main · Ultra Wide · Telephoto</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Materials</span>
+                            <span class="text-platinum-200">Titanium with textured matte glass</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Battery Life</span>
+                            <span class="text-platinum-200">Up to 23 hours video playback</span>
+                        </div>
+                        <div class="flex justify-between py-4">
+                            <span class="text-gray-400">Starting Price</span>
+                            <span class="font-semibold text-xl bg-gradient-to-r from-platinum-100 to-diamond-500 bg-clip-text text-transparent">$999</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="haute-card p-10">
+                    <h3 class="text-3xl font-semibold mb-8 text-center text-platinum-100">iPhone 15 Pro Max</h3>
+                    <div class="space-y-6">
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Display</span>
+                            <span class="text-platinum-200">6.7" Super Retina XDR</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Chip</span>
+                            <span class="text-diamond-300">A17 Pro</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Cameras</span>
+                            <span class="text-platinum-200">48MP Main · Ultra Wide · 5x Telephoto</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Materials</span>
+                            <span class="text-platinum-200">Titanium with textured matte glass</span>
+                        </div>
+                        <div class="flex justify-between py-4 border-b border-navy-700">
+                            <span class="text-gray-400">Battery Life</span>
+                            <span class="text-platinum-200">Up to 29 hours video playback</span>
+                        </div>
+                        <div class="flex justify-between py-4">
+                            <span class="text-gray-400">Starting Price</span>
+                            <span class="font-semibold text-xl bg-gradient-to-r from-platinum-100 to-diamond-500 bg-clip-text text-transparent">$1,199</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="btn-platinum px-16 py-4 rounded-full font-medium text-lg tracking-wider jewel-hover mb-8">
+                    Reserve Your iPhone 15 Pro
+                </button>
+                <p class="text-gray-400 max-w-2xl mx-auto">Available for private viewing at Apple Stores or delivered in premium packaging. Trade in your current iPhone for exclusive Platinum Member benefits.</p>
+                
+                <div class="mt-12 flex flex-wrap justify-center gap-6">
+                    <div class="px-6 py-2 rounded-full border border-gray-700 text-xs tracking-widest">Personal engraving available</div>
+                    <div class="px-6 py-2 rounded-full border border-gray-700 text-xs tracking-widest">24/7 Concierge service</div>
+                    <div class="px-6 py-2 rounded-full border border-gray-700 text-xs tracking-widest">Priority manufacturing</div>
+                    <div class="px-6 py-2 rounded-full border border-gray-700 text-xs tracking-widest">Exclusive warranty</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platinum Footer -->
+    <footer class="bg-navy-950 border-t border-navy-800 py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-[url('https://www.apple.com/v/iphone-15-pro/a/images/overview/design/titanium_texture__buv9x2mmo0ua_large.jpg')] bg-[size:150%] bg-[position:center_30%] opacity-10 mix-blend-overlay"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-20">
+                <div>
+                    <h4 class="text-diamond-400 font-semibold mb-6 uppercase tracking-wider">Shop</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">iPhone 15 Pro</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">iPhone 15 Pro Max</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Compare Models</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Apple Trade In</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Order Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-diamond-400 font-semibold mb-6 uppercase tracking-wider">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">AppleCare+</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">iCloud+</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Apple Music</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Apple Arcade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Apple Pay</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-diamond-400 font-semibold mb-6 uppercase tracking-wider">Support</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Guides</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Forum</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-diamond-400 font-semibold mb-6 uppercase tracking-wider">About Apple</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Newsroom</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Leadership</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Career Opportunities</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Investors</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Ethics & Compliance</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-diamond-400 font-semibold mb-6 uppercase tracking-wider">Platinum Membership</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Member Benefits</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Exclusive Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Private Support</li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Early Access</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-diamond-300 transition">Become A Member</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="platinum-divider my-16 w-full"></div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center pt-8">
+                <div class="flex items-center space-x-8 mb-6 md:mb-0">
+                    <a href="#" class="text-gray-500 hover:text-diamond-400 transition">
+                        <i class="fab fa-apple"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-diamond-400 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-diamond-400 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-diamond-400 transition">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-diamond-400 transition">
+                        <i class="fab fa-pinterest"></i>
+                    </a>
+                </div>
+                <p class="text-gray-600 text-sm text-center md:text-left">Copyright © 2023 Apple Inc. All rights reserved. <span class="mx-2">|</span> Privacy Policy <span class="mx-2">|</span> Terms of Use <span class="mx-2">|</span> Legal <span class="mx-2">|</span> Platinum Program</p>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 text-xs max-w-3xl mx-auto leading-relaxed">
+                    *Trade-in values will vary based on the condition, year, and configuration of your eligible trade-in device. Not all devices are eligible for credit. You must be at least 18 years old to be eligible to trade in for credit or for an Apple Gift Card. Apple or its trade-in partners reserve the right to refuse or limit quantity of any trade-in transaction for any reason.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Platinum Assistance Button -->
+    <div class="fixed bottom-8 right-8 z-50 group">
+        <button class="bg-gradient-to-br from-platinum-100 to-diamond-500 text-navy-900 w-14 h-14 rounded-full flex items-center justify-center shadow-xl transform transition transform hover:scale-110">
+            <i class="fas fa-headset text-xl"></i>
+        </button>
+        <div class="absolute right-16 bottom-0 bg-navy-800 text-platinum-100 text-sm px-4 py-2 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+            Platinum Member Assistance
+            <div class="absolute right-0 top-1/2 transform translate-x-1 -translate-y-1/2 w-3 h-3 bg-navy-800 rotate-45"></div>
+        </div>
+    </div>
+
+    <script>
+        // Elite Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 800);
+            }, 1500);
+        });
+        
+        // Elite Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.getElementById('navbar').classList.add('scrolled');
+            } else {
+                document.getElementById('navbar').classList.remove('scrolled');
+            }
+        });
+        
+        // Bespoke Color Selection
+        const colorOptions = document.querySelectorAll('.bespoke-color');
+        colorOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                colorOptions.forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+        
+        // Initialize ScrollReveal with Luxury Animations
+        ScrollReveal().reveal('.haute-card', {
+            delay: 200,
+            distance: '30px',
+            origin: 'bottom',
+            interval: 100,
+            easing: 'cubic-bezier(0.5, 0, 0, 1)',
+            scale: 0.95,
+            opacity: 0,
+            reset: true
+        });
+        
+        ScrollReveal().reveal('section', {
+            delay: 150,
+            distance: '50px',
+            origin: 'bottom',
+            interval: 150,
+            duration: 800,
+            easing: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+            opacity: 0
+        });
+        
+        // Parallax Effect
+        document.addEventListener('mousemove', function(e) {
+            const parallaxLayers = document.querySelectorAll('.parallax-layer');
+            parallaxLayers.forEach(layer => {
+                const speed = layer.getAttribute('data-speed') || 8;
+                const x = (window.innerWidth - e.pageX * speed) / 100;
+                const y = (window.innerHeight - e.pageY * speed) / 100;
+                layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Marquee Animation Duplication for seamless effect
+        const marquee = document.querySelector('.animate-marquee');
+        if (marquee) {
+            marquee.innerHTML += marquee.innerHTML;
+        }
+        
+        // Add hover effect to jewel-hover elements
+        const jewelHoverElements = document.querySelectorAll('.jewel-hover');
+        jewelHoverElements.forEach(el => {
+            el.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.5s cubic-bezier(0.19, 1, 0.22, 1)';
+            });
+            
+            el.addEventListener('mouseleave', function() {
+                this.style.transition = 'all 0.7s cubic-bezier(0.19, 1, 0.22, 1)';
+            });
+        });
+    </script>
+</body>
+</html>
